@@ -4,6 +4,8 @@ import UIKit
 import PlaygroundSupport
 
 
+// Coordinator Protocol
+
 protocol Coordinating: class {
     associatedtype ViewController: UIViewController
     var viewController: ViewController? { get set }
@@ -41,15 +43,7 @@ extension Coordinating {
 }
 
 
-
-
-
-
-
-
-
-
-
+// ViewControllers
 
 class HomeViewController: UITableViewController {
     
@@ -137,11 +131,7 @@ class DetailViewController: UIViewController {
 
 
 
-
-
-
-
-
+// Custom Coordinators for ViewControllers
 
 class HomeCoordinator: Coordinating {
     
@@ -202,6 +192,7 @@ class DetailCoordinator: Coordinating {
     }
 }
 
+// Starting the presentation.
 
 let nav = UINavigationController()
 let coordinator = HomeCoordinator(root: nav)
